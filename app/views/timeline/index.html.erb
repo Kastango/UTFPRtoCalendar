@@ -1,0 +1,13 @@
+<%= form_tag '/timeline', multipart: true do %>
+  <%= file_field_tag 'files[]', multiple: true, accept: '.csv' %>
+  <%= submit_tag 'upload' %>
+<% end %>
+
+<%= form_tag '/timeline' do %>
+  <%= text_area_tag :html_input, nil, id: 'html-input' %>
+  <%= submit_tag 'submit' %>
+<% end %>
+
+<%= link_to "/timeline", download_path, class: "bg-yellow-400"%>
+
+<div id="html-output"></div>

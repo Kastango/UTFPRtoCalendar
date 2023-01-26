@@ -1,0 +1,45 @@
+<div class="h-screen bg-black flex justify-center items-center flex-col">
+  <div class="flex flex-row p-20 space-x-20">
+    <div>
+      <h1 class="font-bold text-7xl text-white">Importador de <br/> <span class="text-true-gray">Horários</span> UTFPR</h1>
+      <p class="text-true-gray mt-4 text-xl">A maneira mais fácil de ter acesso ao plano de aula das <br/> suas matérias diretamente no Google Agenda.</p>
+      <div class="flex flex-row mt-6 space-x-3">
+        <div class="flex flex-row border-true-gray border rounded-full px-6 py-4 space-x-3 justify-center items-center w-min ">
+          <%= render partial: "svgs/utfpr-logo" %>
+          <%= render partial: "svgs/arrow-right" %>
+          <div class="flex flex-row items-center space-x-2 ">
+            <%= render partial: "svgs/google-calendar" %>
+            <p class="text-true-gray justify-center  align-middle">Agenda</p>
+          </div>
+        </div>
+          <%= link_to timeline_path, class: "flex flex-row bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full" do %>
+              <p class="text-black justify-center align-middle text-xl">Importar</p>
+              <%= render partial: "svgs/chevron-right" %>
+          <% end %>
+      </div>
+    </div>
+    <div class="flex flex-col items-center space-y-6">
+      <iframe class="rounded-xl" width="560" height="315" src="https://www.youtube.com/embed/TthS0MPTy0A" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; 
+        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
+        web-share" allowfullscreen>
+      </iframe>
+      <%= render partial: "svgs/tutorial-and-arrow" %>
+    </div>
+  </div>
+  <div>
+    <div class="flex flex-row items-center justify-center space-x-2 ">
+      <p class="text-white text-md">Feito com</p> 
+      <%= render partial: "svgs/heart" %>
+      <p class="text-white text-md">por Arthur Sosnowski</p>
+    </div>
+    <div class="flex flex-row items-center justify-center space-x-4 mt-4">
+      <%= link_to 'https://twitter.com/arthuites' do %>
+        <%= render partial: "svgs/twitter" %>
+      <% end %>
+      <%= link_to 'https://github.com/Kastango' do %>
+        <%= render partial: "svgs/github" %>
+      <% end %>
+    </div>
+  </div>
+</div>
