@@ -1,6 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .table-container {
+    @apply text-xs text-white w-full align-middle
+  }
+
+  .table-container th {
+    @apply bg-true-yellow text-black
+  }
+
+  .table-container table {
+    @apply w-full rounded-xl overflow-hidden 
+  }
+
+  .table-container td, th, table {
+    @apply border border-true-yellow px-4 py-2 border-opacity-100;
+  }
+}
+
+
+
 /*
 
 @layer components {

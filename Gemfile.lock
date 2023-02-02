@@ -89,8 +89,6 @@ GEM
       reline (>= 0.3.1)
     digest (3.1.0)
     erubi (1.11.0)
-    feathericon-sass (1.0.2)
-      sassc (~> 2.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -230,7 +228,6 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  feathericon-sass
   importmap-rails
   jbuilder
   puma (~> 5.0)
