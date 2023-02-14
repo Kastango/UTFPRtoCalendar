@@ -4,11 +4,11 @@
 
 @layer components {
   .table-container {
-    @apply text-xs text-white w-full align-middle
+    @apply text-xs text-white !important w-full align-middle
   }
 
   .table-container th {
-    @apply bg-true-yellow text-black
+    @apply bg-true-yellow text-black font-normal
   }
 
   .table-container table {
@@ -16,7 +16,7 @@
   }
 
   .table-container td, th, table {
-    @apply border border-true-yellow px-4 py-2 border-opacity-100;
+    @apply border border-true-yellow px-4 py-2 border-opacity-100 bg-almost-black;
   }
 }
 

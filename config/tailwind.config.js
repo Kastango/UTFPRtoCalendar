@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         'true-gray': '#A1A1A1',
         'true-yellow': '#FBBC04',
+        'almost-black': 'rgba(31,31,31,1.0)'
       },
     },
   },
