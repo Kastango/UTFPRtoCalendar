@@ -28,4 +28,4 @@
 !/app/assets/builds/.keep
 
 #ignore csvs
-/public/downloads/*
+/public/downloads/*.csv
