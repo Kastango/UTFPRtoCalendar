@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "timeline", to: "timeline#index"
   post "timeline", to: "timeline#submit" 
+  
+  get 'timeline/download_csv', to: 'timeline#download_csv', as: 'download_csv'
 end

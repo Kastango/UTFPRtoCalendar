@@ -1,4 +1,8 @@
-<%= form_with url: "/timeline", multipart: true do |form| %>
+<% content_for :head do %>
+  <%= javascript_import_module_tag "table_render" %>
+<% end %>
+
+<%= form_with url: timeline_path do |form| %>
   <div class="h-full bg-black flex items-center flex-col py-32 px-48 space-y-32">
     <div class="items-center flex flex-col space-y-4 w-full">
       <h6 class="text-true-gray text-md">- PASSO 1 -</h6>
@@ -27,7 +31,9 @@
     </div>
     <div class="items-center flex flex-col space-y-4 w-full">
       <h6 class="text-true-gray text-md">- PASSO 4 -</h6>
-      <%= form.submit "Processar planos de aula", class: "bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer"%>
+      <%= hidden_field_tag :csv_data %>
+      <%= form.submit "Processar planos de aula", id: "process-button", class: "bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer" %>
+      <%= link_to 'Download CSV', download_csv_path, id: "download-csv-link", class: "transition duration-150 invisible bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer" %>
     </div>
   </div>
 <% end  %>

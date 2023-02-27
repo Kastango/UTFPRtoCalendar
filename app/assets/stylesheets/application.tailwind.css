@@ -4,11 +4,11 @@
 
 @layer components {
   .table-container {
-    @apply text-xs text-white !important w-full align-middle
+    @apply text-xs text-white w-full align-middle
   }
 
   .table-container th {
-    @apply bg-true-yellow text-black font-normal
+    @apply text-white font-normal
   }
 
   .table-container table {
