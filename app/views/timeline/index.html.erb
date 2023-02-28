@@ -23,8 +23,8 @@
       <div class="items-center flex flex-row space-x-4">
         <label name='files' class="bg-black px-6 py-4 text-white border-true-yellow border rounded-full hover:bg-true-yellow transition duration-150 hover:ease-in ease-out hover:text-black cursor-pointer" for="files">Escolher para arquivos</label>
         <%= form.file_field :files,
-          multiple: true, accept: '.csv', class: 'hidden', 
-          onchange: "document.querySelector('#file-names').innerHTML = Array.from(this.files).map(f => f.name).join(', ')"
+          multiple: true, accept: '.csv', class: 'hidden', required: 'true',
+          onchange: "document.querySelector('#file-names').innerHTML = Array.from(this.files).map(f => f.name).join(', '); document.querySelector('#process-button').disabled = false;"
         %>
         <div id="file-names", class="text-true-gray text-md max-w-sm"></div>
       </div>
@@ -32,8 +32,11 @@
     <div class="items-center flex flex-col space-y-4 w-full">
       <h6 class="text-true-gray text-md">- PASSO 4 -</h6>
       <%= hidden_field_tag :csv_data %>
-      <%= form.submit "Processar planos de aula", id: "process-button", class: "bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer" %>
-      <%= link_to 'Download CSV', download_csv_path, id: "download-csv-link", class: "transition duration-150 invisible bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer" %>
+      <%= form.submit "Processar planos de aula", id: "process-button", class: "disabled:bg-black disabled:border disabled:scale-100 disabled:border-true-gray disabled:text-true-gray disabled:cursor-not-allowed bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer", disabled: "true" %>
+      <%= link_to download_csv_path, id: "download-csv-link", class: "transition duration-150 invisible bg-true-yellow justify-center align-middle items-center px-6 py-4 rounded-full hover:scale-110 transition duration-150 cursor-pointer flex flex-row space-x-2" do %>
+          <%= render partial: "svgs/download" %>
+          <p class="text-black justify-center align-middle text-md">Download CSV</p>
+      <% end %>
     </div>
   </div>
 <% end  %>
